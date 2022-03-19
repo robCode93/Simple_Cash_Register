@@ -1,0 +1,15 @@
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\bin\Debug\net6.0\Registrierkasse.exe
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\bin\Debug\net6.0\Registrierkasse.deps.json
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\bin\Debug\net6.0\Registrierkasse.runtimeconfig.json
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\bin\Debug\net6.0\Registrierkasse.dll
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\bin\Debug\net6.0\Registrierkasse.pdb
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\Registrierkasse.csproj.AssemblyReference.cache
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\Registrierkasse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\Registrierkasse.AssemblyInfoInputs.cache
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\Registrierkasse.AssemblyInfo.cs
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\Registrierkasse.csproj.CoreCompileInputs.cache
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\Registrierkasse.dll
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\refint\Registrierkasse.dll
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\Registrierkasse.pdb
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\Registrierkasse.genruntimeconfig.cache
+C:\Users\rober\Documents\Visual Studio 2022\Projects\Registrierkasse\obj\Debug\net6.0\ref\Registrierkasse.dll
