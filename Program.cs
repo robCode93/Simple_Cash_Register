@@ -12,6 +12,10 @@ int[] keyNumbers = new int[20];
 Dictionary<int, string> productDictionary = new Dictionary<int, string>();
 Dictionary<string, decimal> priceDictionary = new Dictionary<string, decimal>();
 
+//Variablen für den Kundenwarenkorb
+string[] basket = new string[1]; //Vorerst ein Platz und dann zur Laufzeit verändern
+decimal[] priceBasket = new decimal[1]; //Ebenfalls erstmal ein Platz
+
 // Initialisieren der Variablen
 // Generieren der KeyNumbers für das Warenverzeichnis
 for(int i = 0; i < 20; i++)
@@ -103,7 +107,8 @@ while (programmLoop)
     Console.WriteLine("Was möchten Sie tun?");
     Console.WriteLine("[1] Produkt-Liste anzeigen");
     Console.WriteLine("[2] Preis-Liste anzeigen");
-    Console.WriteLine("[3] Beenden");
+    Console.WriteLine("[3] Warenkorb");
+    Console.WriteLine("[4] Beenden");
     Console.WriteLine();
     Console.Write("Eingabe: ");
     userInput = Console.ReadLine();
@@ -443,6 +448,21 @@ while (programmLoop)
             break;
 
         case "3":
+        Warenkorb:
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Warenkorb des Kunden");
+            Console.ResetColor();
+            Console.WriteLine("########################");
+            Console.WriteLine();
+            Console.WriteLine("[1] Ein Produkt zum Warenkorb hinzufügen");
+            Console.WriteLine("[2] Produkte aus dem Warenkorb löschen");
+            Console.WriteLine("[3] Bezhalen");
+            Console.WriteLine("[4] Zum Hauptmenü");
+            Console.WriteLine("[5] Beenden");
+            break;
+
+        case "4":
             Environment.Exit(0);
             break;
 
