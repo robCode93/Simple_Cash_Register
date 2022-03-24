@@ -241,7 +241,8 @@ while (programmLoop)
                         Console.WriteLine(kvp);
                     }
                     Console.WriteLine();
-                    Console.Write("Welches Produkt möchten Sie löschen: ");
+                    Console.WriteLine("Welches Produkt möchten Sie löschen: ");
+                    Console.Write("Warennummer eingeben: ");
                     int deleteProduct = Convert.ToInt32(Console.ReadLine());
                     int deleteProductIndex = Array.IndexOf(keyNumbers, deleteProduct);
 
@@ -249,7 +250,20 @@ while (programmLoop)
                     {
                         productDictionary.Remove(keyNumbers[deleteProductIndex]);
                     }
-                        break;
+                    Console.WriteLine();
+                    Console.WriteLine("Zum Hauptmenü (J/N): ");
+                    userInputHome = Console.ReadLine();
+
+                    if (userInputHome == "j" || userInputHome == "J")
+                    {
+                        goto Home;
+                    }
+                    else
+                    {
+                        goto Preisanzeigen;
+                    }
+
+                    break;
 
                 case "5":
                     Environment.Exit(0);
@@ -277,9 +291,154 @@ while (programmLoop)
             {
                 Console.WriteLine(kvp);
             }
+
             Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("Zum Hauptmenü zurück...");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Was wollen Sie machen?");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("[1] Zum Hauptmenü");
+            Console.WriteLine("[2] Keys anzeigen");
+            Console.WriteLine("[3] Produkt hinzufügen");
+            Console.WriteLine("[4] Produkt entfernen");
+            Console.WriteLine("[5] Beenden");
+            Console.WriteLine();
+            Console.Write("Eingabe: ");
+            string userInput_PriceMenu = Console.ReadLine();
+
+            switch (userInput_PriceMenu)
+            {
+                case "1":
+                    goto Home;
+                    break;
+
+                case "2":
+                KeyAnzeigen:
+                    Console.WriteLine();
+                    foreach(KeyValuePair<int, string> kvp in productDictionary)
+                    {
+                        Console.WriteLine(kvp.ToString());
+                    }
+
+               
+
+          
+
+                    Console.WriteLine();
+                    Console.WriteLine("Zum Hauptmenü (J/N): ");
+                    string userInputHome = Console.ReadLine();
+
+                    if (userInputHome == "j" || userInputHome == "J")
+                    {
+                        goto Home;
+                    }
+                    else
+                    {
+                        goto KeyAnzeigen;
+                    }
+
+                    break;
+
+                case "3":
+                    ProduktHinzu:
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Produkt der Warendatenbank hinzufügen");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("--------------------------------------");
+                    Console.WriteLine();
+                    Console.Write("Warenbezeichnung: ");
+                    string newProduct = Console.ReadLine();
+                    Console.Write("Produktpreis [in Euro]: ");
+                    decimal priceNewProduct = Convert.ToDecimal(Console.ReadLine());
+                    int newProductKeyNumber;
+
+
+
+                    Console.Write("Warennummer hinzufügen [XXXXXX] : ");
+                    int newProductKeyNumberInput = Convert.ToInt32(Console.ReadLine());
+                    int newProductKeyNumberIndex = Array.IndexOf(keyNumbers, newProductKeyNumberInput);
+
+                    if (newProductKeyNumberIndex <= -1)
+                    {
+                        newProductKeyNumber = newProductKeyNumberInput;
+                        Array.Resize(ref products, products.Length + 1);
+                        products[products.Length - 1] = newProduct;
+                        productDictionary.Add(newProductKeyNumber, newProduct);
+                        priceDictionary.Add(newProduct, priceNewProduct);
+
+                    }
+                    else if (newProductKeyNumberIndex > -1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Nummer bereits vergeben...");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine();
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine("Zum Hauptmenü (J/N): ");
+                    userInputHome = Console.ReadLine();
+
+                    if (userInputHome == "j" || userInputHome == "J")
+                    {
+                        goto Home;
+                    }
+                    else
+                    {
+                        goto ProduktHinzu;
+                    }
+
+                    break;
+
+
+                case "4":
+                    ProduktEntfernen:
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Produkt aus dem Warenverzeichnis entfernen");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("-------------------------------------------");
+                    Console.WriteLine();
+                    foreach (KeyValuePair<int, string> kvp in productDictionary)
+                    {
+                        Console.WriteLine(kvp);
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine("Welches Produkt möchten Sie löschen: ");
+                    Console.Write("Warennummer eingeben: ");
+                    int deleteProduct = Convert.ToInt32(Console.ReadLine());
+                    int deleteProductIndex = Array.IndexOf(keyNumbers, deleteProduct);
+
+                    if (deleteProductIndex > -1)
+                    {
+                        productDictionary.Remove(keyNumbers[deleteProductIndex]);
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine("Zum Hauptmenü (J/N): ");
+                    userInputHome = Console.ReadLine();
+
+                    if (userInputHome == "j" || userInputHome == "J")
+                    {
+                        goto Home;
+                    }
+                    else
+                    {
+                        goto ProduktEntfernen;
+                    }
+
+                    break;
+
+                case "5":
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("FEHLERHAFTE EINGABE!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    break;
+
+            }
 
             break;
 
