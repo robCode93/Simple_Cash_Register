@@ -162,6 +162,7 @@ while (programmLoop)
                         Console.ForegroundColor = ConsoleColor.White;
                     }
 
+                    Console.WriteLine();
                     Console.WriteLine("Zum Hauptmenü (J/N): ");
                     string userInputHome = Console.ReadLine();
 
@@ -211,7 +212,22 @@ while (programmLoop)
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.WriteLine();
                         }
-                        break;
+
+                    Console.WriteLine();
+                    Console.WriteLine("Zum Hauptmenü (J/N): ");
+                    userInputHome = Console.ReadLine();
+
+                    if (userInputHome == "j" || userInputHome == "J")
+                    {
+                        goto Home;
+                    }
+                    else
+                    {
+                        goto Preisanzeigen;
+                    }
+
+                    break;
+
 
                 case "4":
                     Console.Clear();
@@ -236,7 +252,7 @@ while (programmLoop)
                         break;
 
                 case "5":
-                    programmLoop = false;
+                    Environment.Exit(0);
                     break;
 
                 default:
