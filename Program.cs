@@ -93,6 +93,7 @@ priceDictionary.Add(products[19], 19.99M);
 // Anwendung
 while (programmLoop)
 {
+    Home: 
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine("Registrierkasse {0}", registerNumber);
@@ -138,9 +139,11 @@ while (programmLoop)
             switch (userInput_PD)
             {
                 case "1":
+                    goto Home;
                         break;
 
                 case "2":
+                    Preisanzeigen:
                     Console.WriteLine();
                     Console.Write("Produktnummer eingeben: ");
                     int produktNumberInput = Convert.ToInt32(Console.ReadLine());
@@ -150,7 +153,7 @@ while (programmLoop)
                     if(valueIndex > -1)
                     {
                         decimal priceValue = priceDictionary[value];
-                        Console.WriteLine("Produkt: {0} | Preis: {1}", value, priceDictionary[value]);
+                        Console.WriteLine("Produkt: {0} | Preis: {1} Euro", value, priceDictionary[value]);
                     }
                     else
                     {
@@ -158,6 +161,19 @@ while (programmLoop)
                         Console.WriteLine("Kein Produkt gefunden!");
                         Console.ForegroundColor = ConsoleColor.White;
                     }
+
+                    Console.WriteLine("Zum Hauptmenü (J/N): ");
+                    string userInputHome = Console.ReadLine();
+
+                    if(userInputHome == "j" || userInputHome == "J")
+                    {
+                        goto Home;
+                    }
+                    else
+                    {
+                        goto Preisanzeigen;
+                    }
+
                         break;
 
                 case "3":
@@ -252,7 +268,7 @@ while (programmLoop)
             break;
 
         case "3":
-            programmLoop = false;
+            Environment.Exit(0);
             break;
 
         default:
